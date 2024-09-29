@@ -16,11 +16,12 @@
 
   <name>Tahopen Action Sequence DOM</name>
   <url>http://www.tahopen</url>
+  <!--
   <scm>
     <developerConnection>scm:git:git@github.com:pentaho/pentaho-actionsequence-dom.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
-
+-->
   <licenses>
     <license>
       <name>Mozilla Public License, Version 1.1</name>
@@ -56,37 +57,11 @@
   </dependencies>
 
   <repositories>
-  <!--
-    <repository>
-      <id>pentaho-public</id>
-      <name>Pentaho Public</name>
-      <url>https://repo.orl.eng.hitachivantara.com/artifactory/pnt-mvn/</url>
-      <releases>
-        <enabled>true</enabled>
-        <updatePolicy>daily</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>interval:15</updatePolicy>
-      </snapshots>
-    </repository>
-    -->
+
   </repositories>
 
   <pluginRepositories>
-  <!--
-    <pluginRepository>
-      <id>pentaho-public-plugins</id>
-      <name>Pentaho Public Plugins</name>
-      <url>https://repo.orl.eng.hitachivantara.com/artifactory/pnt-mvn/</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <releases>
-        <updatePolicy>never</updatePolicy>
-      </releases>
-    </pluginRepository>
-    -->
+
   </pluginRepositories>
 
 
