@@ -15,7 +15,7 @@
   <version>0.1.0.0-SNAPSHOT</version>
 
   <name>Tahopen Action Sequence DOM</name>
-  <url>http://www.tahopen</url>
+  <url>http://www.tahopen.org</url>
   <!--
   <scm>
     <developerConnection>scm:git:git@github.com:pentaho/pentaho-actionsequence-dom.git</developerConnection>
