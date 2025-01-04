@@ -7,21 +7,31 @@
   <parent>
     <groupId>org.tahopen</groupId>
     <artifactId>tahopen-ce-jar-parent-pom</artifactId>
-    <version>0.1.0.0-SNAPSHOT</version>
+    <version>0.1.0.0</version>
   </parent>
 
   <groupId>org.tahopen</groupId>
   <artifactId>actionsequence-dom</artifactId>
-  <version>0.1.0.0-SNAPSHOT</version>
+  <version>0.1.0.0</version>
 
   <name>Tahopen Action Sequence DOM</name>
+  <description>Tahopen Action Sequence DOM</description>    
   <url>http://www.tahopen.org</url>
-  <!--
+  
   <scm>
-    <developerConnection>scm:git:git@github.com:pentaho/pentaho-actionsequence-dom.git</developerConnection>
-    <tag>HEAD</tag>
-  </scm>
--->
+    <connection>scm:git:git://github.com/tahopen/tahopen-actionsequence-dom.git</connection>
+    <developerConnection>scm:git:git@github.com:tahopen/tahopen-actionsequence-dom.git</developerConnection>
+    <url>https://github.com/tahopen/tahopen-actionsequence-dom</url>
+  </scm> 
+
+  <developers>
+    <developer>
+      <id>marciojv</id>
+      <name>Marcio Junior Vieira</name>
+      <email>marcio@tahopen.org</email>
+    </developer>
+  </developers>
+    
   <licenses>
     <license>
       <name>Mozilla Public License, Version 1.1</name>
@@ -31,7 +41,7 @@
   </licenses>
 
   <properties>
-    <tahopen-connections.version>0.1.0.0-SNAPSHOT</tahopen-connections.version>
+    <tahopen-connections.version>0.1.0.0</tahopen-connections.version>
   </properties>
 
   <dependencies>
@@ -55,14 +65,64 @@
       <version>${tahopen-connections.version}</version>
     </dependency>
   </dependencies>
+  
+ <build>    
+    <plugins>
+       
+      <!-- Generate java docs -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.2.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
 
-  <repositories>
+      <!-- sign key gpg--> 
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>3.0.1</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
 
-  </repositories>
+      <!-- publish to Maven Central --> 
+      <plugin>
+         <groupId>org.sonatype.central</groupId>
+         <artifactId>central-publishing-maven-plugin</artifactId>
+         <version>0.6.0</version>
+         <extensions>true</extensions>
+         <configuration>
+           <publishingServerId>maven-central-snapshots</publishingServerId>
+         </configuration>
+      </plugin>    
+    
+      <plugin>
+        <groupId>org.codehaus.plexus</groupId>
+        <artifactId>plexus-component-metadata</artifactId>
+        <version>1.7.1</version>
+        <executions>
+          <execution>
+            <id>process-classes</id>
+            <goals>
+              <goal>generate-metadata</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
 
-  <pluginRepositories>
-
-  </pluginRepositories>
-
+  </build>  
 
 </project>
